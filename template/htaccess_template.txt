@@ -1,0 +1,6 @@
+RewriteEngine On    # Turn on the rewriting engine
+#RewriteBase
+RewriteRule ^prettyTest.php$ prettyTest.php?pretty=1 [L]
+RewriteCond  %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?u=$1&pretty=1 [L]
